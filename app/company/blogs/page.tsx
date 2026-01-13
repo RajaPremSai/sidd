@@ -81,7 +81,7 @@ export default function BlogsPage() {
                    <p className="text-gray-600 mb-6 text-sm line-clamp-3">
                       {blog.excerpt}
                    </p>
-                   <Link href="#" className="flex items-center text-sm font-bold text-secondary group-hover:gap-2 transition-all">
+                   <Link href={`/company/blogs/${blog.slug}`} className="flex items-center text-sm font-bold text-secondary group-hover:gap-2 transition-all">
                       Read Full Article <ArrowRight className="ml-2 w-4 h-4" />
                    </Link>
                 </Card>

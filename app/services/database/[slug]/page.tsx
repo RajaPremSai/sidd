@@ -8,8 +8,9 @@ export async function generateStaticParams() {
    return Object.keys(SERVICE_CONTENT).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const content = SERVICE_CONTENT[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const content = SERVICE_CONTENT[slug];
   if (!content) return { title: "Service Not Found" };
   
   return {
@@ -18,8 +19,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function DynamicServicePage({ params }: { params: { slug: string } }) {
-  const content = SERVICE_CONTENT[params.slug];
+export default async function DynamicServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const content = SERVICE_CONTENT[slug];
 
   if (!content) {
     // If not found in registry (and not handled by other folders), 404

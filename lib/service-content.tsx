@@ -12,9 +12,7 @@ export interface ServiceContent {
   };
 }
 
-export const SERVICE_CONTENT: Record<string, ServiceContent> = {
-export const SERVICE_CONTENT: Record<string, ServiceContent> = {
-  // --- Database Services ---
+export const SERVICE_CONTENT: Record<string, ServiceContent> = {  // --- Database Services ---
   "oracle-dba": {
     title: "Oracle DBA Services",
     subtitle: "Proactive Management for Mission-Critical Oracle Environments",
