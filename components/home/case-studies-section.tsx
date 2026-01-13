@@ -1,6 +1,7 @@
 import { Section, Card } from "@/components/ui/layout-components";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function CaseStudiesSection() {
   return (
@@ -18,25 +19,46 @@ export function CaseStudiesSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[1, 2, 3].map((i) => (
-          <Card key={i} className="p-0 overflow-hidden group">
-            <div className="h-48 bg-gray-200 relative">
-               {/* Placeholder Image */}
-               <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">
-                  Case Study Preview {i}
-               </div>
-               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors" />
+        {[
+          {
+            title: "Financial Services Giant Optimizes Oracle Licensing",
+            category: "Cost Optimization",
+            image: "/images/finance-case-study.png",
+            desc: "Reduced annual licensing costs by 60% through strategic consolidation."
+          },
+          {
+            title: "Healthcare Provider Migrates to Azure Cloud",
+            category: "Cloud Migration",
+            image: "/images/healthcare-case-study.png",
+            desc: "Seamless 50TB+ patient data migration adhering to HIPAA compliance."
+          },
+          {
+            title: "Retail Chain Implements Real-time Analytics",
+            category: "Data Analytics",
+            image: "/images/retail-case-study.png",
+            desc: "Real-time inventory tracking across 500+ stores with Power BI."
+          }
+        ].map((study, i) => (
+          <Card key={i} className="p-0 overflow-hidden group border-none shadow-lg hover:shadow-xl transition-all">
+            <div className="h-48 bg-gray-200 relative overflow-hidden">
+               <Image 
+                 src={study.image}
+                 alt={study.title}
+                 fill
+                 className="object-cover group-hover:scale-110 transition-transform duration-700"
+               />
+               <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors" />
             </div>
             <div className="p-6">
-              <div className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">Cloud Migration</div>
-              <h3 className="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
-                 Modernizing Legacy Infrastructure for a FinTech Giant
+              <div className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">{study.category}</div>
+              <h3 className="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                 {study.title}
               </h3>
               <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                 We migrated mission-critical databases to OCI, resulting in 40% cost reduction and 99.99% uptime.
+                 {study.desc}
               </p>
-              <div className="text-primary font-medium text-sm flex items-center">
-                Read Case Study <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <div className="text-primary font-medium text-sm flex items-center group/link">
+                Read Case Study <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </div>
             </div>
           </Card>

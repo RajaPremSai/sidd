@@ -33,9 +33,9 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-dark mb-1">Visit Us</h3>
                   <p className="text-gray-600">
-                    Silicon Towers, Silicon Valley Lane,<br />
-                    Madhapur, Hyderabad – 500081,<br />
-                    Telangana, India
+                    Flat No 302, Marigold Block,<br />
+                    RDB Coconut Groove, Miyapur,<br />
+                    Hyderabad, 500049.
                   </p>
                 </div>
               </Card>
@@ -44,8 +44,7 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6 text-secondary shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-dark mb-1">Email Us</h3>
-                  <p className="text-gray-600">info@siddidharmikatech.com</p>
-                  <p className="text-gray-600">scalesales@siddidharmikatech.com</p>
+                  <p className="text-gray-600">siddidharmika.solutions@gmail.com</p>
                 </div>
               </Card>
 

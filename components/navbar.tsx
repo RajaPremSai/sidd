@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
@@ -116,14 +117,18 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative z-50 flex items-center gap-2">
-            <div className="h-10 w-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-              S
-            </div>
+          <Link href="/" className="relative z-50 flex items-center gap-3">
+            <Image 
+              src="/images/logo.png" 
+              alt="Siddidharmika Logo" 
+              width={48} 
+              height={48} 
+              className="w-12 h-12 object-contain"
+            />
             <span
               className={cn(
                 "text-xl font-bold tracking-tight",
-                isScrolled ? "text-primary" : "text-white mix-blend-difference" // Ensures visibility on hero
+                isScrolled ? "text-primary" : "text-white mix-blend-difference" 
               )}
             >
               Siddidharmika

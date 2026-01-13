@@ -23,10 +23,12 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2">
              <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-200">
-                {/* Placeholder Image */}
-                 <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold">
-                    Office / Team Image
-                 </div>
+                 <Image 
+                   src="/images/logo.png"
+                   alt="Siddidharmika Logo"
+                   fill
+                   className="object-contain p-12 hover:scale-105 transition-transform duration-700"
+                 />
              </div>
           </div>
           <div className="w-full md:w-1/2 space-y-6">
@@ -53,6 +55,26 @@ export default function AboutPage() {
       </Section>
 
       <Section background="light">
+         <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-dark mb-4">Leadership</h2>
+            <p className="text-gray-600">Guided by industry veterans with deep expertise in enterprise technology.</p>
+         </div>
+         <div className="max-w-md mx-auto">
+            <Card className="p-6 text-center hover:border-primary transition-all">
+               <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl font-bold text-gray-400">
+                  {/* Placeholder for CEO Image if available, else initials */}
+                  AV
+               </div>
+               <h3 className="text-xl font-bold text-dark">A V Subbarao</h3>
+               <p className="text-primary font-medium mb-4">Founder & CEO</p>
+               <p className="text-gray-600 text-sm">
+                  With over 20 years of experience in Database Management and Enterprise Solutions, leading Siddidharmika towards global excellence.
+               </p>
+            </Card>
+         </div>
+      </Section>
+
+      <Section>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <Card className="p-8">
                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">

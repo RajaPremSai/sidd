@@ -8,12 +8,16 @@ export function WhoWeAreSection() {
     <Section background="white">
       <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
         <div className="w-full md:w-1/2">
-           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-tr from-gray-200 to-gray-100 flex items-center justify-center text-gray-400">
-               {/* Placeholder for actual office/team image */}
-               <span className="text-sm">Team / Office Image</span>
+           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-tr from-gray-200 to-gray-100 flex items-center justify-center text-gray-400 group">
+               <Image 
+                 src="/images/logo.png"
+                 alt="Siddidharmika Logo"
+                 fill
+                 className="object-contain p-12 group-hover:scale-105 transition-transform duration-700"
+               />
                
                {/* Decorative Abstract overlay */}
-               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-multiply" />
+               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply" />
            </div>
         </div>
 

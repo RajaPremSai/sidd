@@ -2,6 +2,7 @@
 
 import { Section, Card } from "@/components/ui/layout-components";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const BLOGS = [
@@ -64,11 +65,18 @@ export default function BlogsPage() {
              {BLOGS.map((blog) => (
                 <Card key={blog.slug} className="group hover:border-primary transition-all">
                    <div className="h-48 bg-gray-200 rounded-lg mb-6 relative overflow-hidden">
+                      <Image 
+                         src={
+                            blog.slug === "oracle-optimization" ? "/images/blog-oracle.png" :
+                            blog.slug === "cloud-comparison" ? "/images/blog-cloud.png" :
+                            blog.slug === "ai-future" ? "/images/blog-ai.png" :
+                            "/images/blog-oracle.png" // Fallback
+                         }
+                         alt={blog.title}
+                         fill
+                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                       <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors" />
-                      {/* Placeholder for Blog Image */}
-                      <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">
-                         Blog Image
-                      </div>
                    </div>
                    <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider mb-3">
                       <span className="text-secondary">{blog.category}</span>

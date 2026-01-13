@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -8,19 +9,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white mb-4">Siddidharmika</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/images/logo.png" alt="Siddidharmika Logo" width={40} height={40} className="w-10 h-10 object-contain" />
+              <h3 className="text-2xl font-bold text-white">Siddidharmika</h3>
+            </div>
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-secondary shrink-0 mt-1" />
               <p className="text-sm leading-relaxed">
-                Silicon Towers, Silicon Valley Lane,<br />
-                Madhapur, Hyderabad – 500081,<br />
-                Telangana, India
+                Flat No 302, Marigold Block,<br />
+                RDB Coconut Groove, Miyapur,<br />
+                Hyderabad, 500049.
               </p>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-secondary" />
-              <a href="mailto:info@siddidharmikatech.com" className="text-sm hover:text-white transition-colors">
-                info@siddidharmikatech.com
+              <a href="mailto:siddidharmika.solutions@gmail.com" className="text-sm hover:text-white transition-colors">
+                siddidharmika.solutions@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">

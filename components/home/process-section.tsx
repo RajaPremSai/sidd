@@ -1,6 +1,7 @@
 "use client";
 
 import { Section } from "@/components/ui/layout-components";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const STEPS = ["Assess", "Analyze", "Design", "Execute"];
@@ -42,13 +43,24 @@ export function ProcessSection() {
         </div>
 
         {/* Right: Video Placeholder */}
+        {/* Right: Workflow Visual */}
         <div className="w-full lg:w-1/2">
-          <div className="relative aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center group">
-            <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/10 transition-colors" />
-            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 cursor-pointer hover:scale-110 transition-transform">
-               <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1" />
-            </div>
-            <p className="absolute bottom-6 left-6 text-white font-medium tracking-wide">Watch Our Workflow</p>
+          <div className="relative aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl group border border-gray-800">
+             <Image 
+               src="/images/process-workflow.png"
+               alt="Siddidharmika Proven Process Workflow"
+               fill
+               className="object-cover group-hover:scale-105 transition-transform duration-700"
+             />
+             <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors" />
+             
+             {/* Dynamic Overlay Effect */}
+             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+                <div>
+                   <p className="text-white font-bold text-lg mb-1">Visualized Workflow</p>
+                   <p className="text-gray-300 text-sm">From concept to execution, we ensure transparency.</p>
+                </div>
+             </div>
           </div>
         </div>
       </div>

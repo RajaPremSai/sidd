@@ -2,6 +2,7 @@
 
 import { Section, Card } from "@/components/ui/layout-components";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export default function CaseStudiesPage() {
@@ -41,11 +42,18 @@ export default function CaseStudiesPage() {
                 <div key={i} className="group cursor-pointer">
                    <div className="overflow-hidden rounded-2xl mb-6 shadow-md">
                       <div className="h-64 bg-gray-200 relative group-hover:scale-105 transition-transform duration-500">
-                          {/* Placeholder Image */}
-                          <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-lg">
-                             {study.title} Visual
-                          </div>
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                          <Image 
+                             src={
+                                i === 0 ? "/images/finance-case-study.png" : 
+                                i === 1 ? "/images/healthcare-case-study.png" : 
+                                i === 2 ? "/images/retail-case-study.png" : 
+                                "/images/finance-case-study.png" // Fallback/Repeat
+                             }
+                             alt={study.title}
+                             fill
+                             className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
                       </div>
                    </div>
                    <div className="space-y-3">
