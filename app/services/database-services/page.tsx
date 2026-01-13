@@ -44,13 +44,33 @@ export default function DatabaseServicesPage() {
         Our team of certified experts brings decades of experience across all major database platforms. Whether you need 24/7 monitoring, complex migrations, or performance tuning, we provide tailored solutions that align with your business objectives.
       `}
       benefits={[
-        "24/7 Monitoring & Support",
-        "Proactive Performance Tuning",
-        "High Availability & Disaster Recovery",
-        "Cost Optimization",
-        "Seamless Cloud Migrations",
+        {
+          title: "24/7 Monitoring & Support",
+          description: "Round-the-clock database monitoring and expert support to ensure optimal performance.",
+          icon: "Activity"
+        },
+        {
+          title: "Proactive Performance Tuning",
+          description: "Continuous optimization to maintain peak database efficiency and responsiveness.",
+          icon: "Zap"
+        },
+        {
+          title: "High Availability & Disaster Recovery",
+          description: "Robust backup and recovery solutions to protect your critical data assets.",
+          icon: "Shield"
+        },
+        {
+          title: "Cost Optimization",
+          description: "Strategic resource management to reduce operational costs while maintaining quality.",
+          icon: "TrendingUp"
+        },
+        {
+          title: "Seamless Cloud Migrations",
+          description: "Expert migration services with minimal downtime and maximum data integrity.",
+          icon: "Globe"
+        },
       ]}
-      features={features}
+      offerings={features}
     />
   );
 }
